@@ -1,0 +1,72 @@
+{
+    "habits": [
+        {
+            "id": 1,
+            "name": "walking",
+            "category": "Fitness",
+            "reminder_days": [
+                "Monday",
+                "Tuesday",
+                "Wednesday"
+            ],
+            "reminder_time": "07:00",
+            "completions": [
+                "2026-06-23",
+                "2026-06-24"
+            ],
+            "created_at": "2026-06-23"
+        },
+        {
+            "id": 2,
+            "name": "ai",
+            "category": "Study",
+            "reminder_days": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "reminder_time": "11:00",
+            "completions": [
+                "2026-06-24"
+            ],
+            "created_at": "2026-06-24"
+        },
+        {
+            "id": 3,
+            "name": "beetroot juice",
+            "category": "Health",
+            "reminder_days": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "reminder_time": "08:30",
+            "completions": [
+                "2026-06-24"
+            ],
+            "created_at": "2026-06-24"
+        },
+        {
+            "id": 4,
+            "name": "swimming",
+            "category": "Fitness",
+            "reminder_days": [
+                "Monday",
+                "Wednesday",
+                "Friday",
+                "Sunday"
+            ],
+            "reminder_time": "19:00",
+            "completions": [],
+            "created_at": "2026-06-24"
+        }
+    ]
+}

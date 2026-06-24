@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #fff1f8, #eef7ff, #f5fff1);
+    color: #4b4453;
+    padding: 30px;
+}
+
+/* cute background decorations */
+body::before {
+    content: "🌸 ✨ 🐰 🌿 💗 ⭐";
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    font-size: 32px;
+    opacity: 0.30;
+    z-index: -1;
+}
+
+body::after {
+    content: "☁️ 🌷 🍓 🦋";
+    position: fixed;
+    bottom: 30px;
+    left: 35px;
+    font-size: 34px;
+    opacity: 0.30;
+    z-index: -1;
+}
+
+.page-wrapper {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* top heading section */
+.hero-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.75);
+    border: 3px solid #ffd6e8;
+    border-radius: 35px;
+    padding: 35px 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 12px 30px rgba(255, 182, 193, 0.25);
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 52px;
+    color: #ff8fab;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px #ffe5ec;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #7b6d8d;
+    margin-bottom: 22px;
+}
+
+/* general links as buttons */
+a {
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 25px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+/* add button */
+.add-btn {
+    background: #b8c0ff;
+    color: white;
+    padding: 13px 24px;
+    box-shadow: 0 6px 14px rgba(184, 192, 255, 0.4);
+}
+
+.add-btn:hover {
+    background: #aab4ff;
+    transform: translateY(-3px);
+}
+
+/* habit cards */
+.habits-section {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.habit-card {
+    background: rgba(255, 255, 255, 0.82);
+    border: 3px solid #ffc8dd;
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.25);
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.habit-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 14px 32px rgba(255, 182, 193, 0.35);
+}
+
+.habit-card::before {
+    content: "🌷";
+    position: absolute;
+    top: -19px;
+    left: 25px;
+    font-size: 34px;
+}
+
+.habit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.habit-header h2 {
+    font-size: 28px;
+    color: #6d597a;
+}
+
+.streak-badge {
+    background: #fff0f5;
+    color: #ff6f91;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    border: 2px solid #ffd6e8;
+}
+
+.habit-info {
+    background: #fffafc;
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 18px;
+    border: 2px dashed #ffd6e8;
+}
+
+.habit-info p {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: #5c5470;
+}
+
+.habit-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* action buttons */
+.habit-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.habit-actions a {
+    padding: 10px 16px;
+    font-size: 15px;
+}
+
+.done-btn {
+    background: #b5ead7;
+    color: #3d5a40;
+}
+
+.done-btn:hover {
+    background: #9ee6c7;
+    transform: translateY(-3px);
+}
+
+.edit-btn {
+    background: #cdb4db;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #b99bcc;
+    transform: translateY(-3px);
+}
+
+.delete-btn {
+    background: #ffadad;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #ff8f8f;
+    transform: translateY(-3px);
+}
+
+/* empty state */
+.empty-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 3px dashed #cdb4db;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(205, 180, 219, 0.25);
+}
+
+.empty-card h2 {
+    color: #7b6d8d;
+    margin-bottom: 10px;
+}
+
+.empty-card p {
+    color: #6d597a;
+}
+
+/* mobile view */
+@media (max-width: 600px) {
+    body {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .hero-section {
+        padding: 28px 18px;
+    }
+
+    .habit-card {
+        padding: 22px;
+    }
+
+    .habit-header h2 {
+        font-size: 24px;
+    }
+
+    .habit-actions a {
+        width: 100%;
+        text-align: center;
+    }
+}

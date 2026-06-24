@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Habit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Add New Habit</h1>
+    <form method="POST">
+
+        <label>Habit Name</label>
+        <input type="text" name="name" placeholder="eg. Read books" required>
+
+        <label>Category</label>
+        <select name="category">
+            <option>Health</option>
+            <option>Study</option>
+            <option>Fitness</option>
+            <option>Mindfulness</option>
+            <option>Other</option>
+        </select>
+
+        <label>Reminder Days</label>
+        <div>
+            <input type="checkbox" name="reminder_days" value="Monday"> Monday
+            <input type="checkbox" name="reminder_days" value="Tuesday"> Tuesday
+            <input type="checkbox" name="reminder_days" value="Wednesday"> Wednesday
+            <input type="checkbox" name="reminder_days" value="Thursday"> Thursday
+            <input type="checkbox" name="reminder_days" value="Friday"> Friday
+            <input type="checkbox" name="reminder_days" value="Saturday"> Saturday
+            <input type="checkbox" name="reminder_days" value="Sunday"> Sunday
+        </div>
+
+        <label>Reminder Time</label>
+        <input type="time" name="reminder_time">
+
+        <button type="submit">Add Habit</button>
+        <a href="/">Cancel</a>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Database
+*.db
+
+# Environment variables (keep your API key secret!)
+.env
+
+# Mac
+.DS_Store

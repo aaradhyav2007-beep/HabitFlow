@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitFlow</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="hero-section">
+            <h1>🌸 HabitFlow 🌸</h1>
+            <p class="subtitle">✨✨Track your habits✨✨</p>
+            <a class="add-btn" href="/add">+ Add New Habit</a>
+        </header>
+
+        <section class="habits-section">
+
+            {% if habits %}
+                {% for habit in habits %}
+                <div class="habit-card">
+
+                    <div class="habit-header">
+                        <h2>{{ habit["name"] }}</h2>
+                        <span class="streak-badge">🔥 {{ streaks[habit["id"]] }} day streak</span>
+                    </div>
+
+                    <div class="habit-info">
+                        <p><strong>Category:</strong> {{ habit["category"] }}</p>
+                        <p><strong>Reminder:</strong> {{ habit["reminder_days"] | join(", ") }} at {{ habit["reminder_time"] }}</p>
+                    </div>
+
+                    <div class="habit-actions">
+                        <a class="done-btn" href="/mark_done/{{ habit['id'] }}">✅ Mark Done Today</a>
+                        <a class="edit-btn" href="/edit/{{ habit['id'] }}">✏️ Edit</a>
+                        <a class="delete-btn" href="/delete/{{ habit['id'] }}">🗑️ Delete</a>
+                    </div>
+
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="empty-card">
+                    <h2>🌷 No habits yet</h2>
+                    <p>Add your first habit and start building your streak!</p>
+                </div>
+            {% endif %}
+
+        </section>
+
+    </div>
+    <!-- NEW: AI Weekly Summary & Habit Suggestions Section -->
+        <section class="ai-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px auto; max-width: 1000px; padding: 0 20px;">
+            
+            <!-- 1. Weekly Summary -->
+            <div class="ai-card" style="background: white; border: 2px solid #ffe3ec; border-radius: 24px; padding: 24px; box-shadow: 0 8px 20px rgba(255, 182, 193, 0.15); position: relative;">
+                <h2 style="color: #6a537a; font-size: 1.5rem; margin-top: 0; display: flex; align-items: center; gap: 8px;">✨ AI Weekly Insights</h2>
+                <div class="ai-summary-content" style="color: #7b6887; font-size: 0.95rem; line-height: 1.6; background: #fffcfd; border: 1.5px dashed #ffd1dc; border-radius: 16px; padding: 16px; margin-top: 12px;">
+                    {{ summary | safe }}
+                </div>
+            </div>
+
+            <!-- 2. Habit Suggestions -->
+            <div class="ai-card" style="background: white; border: 2px solid #ffe3ec; border-radius: 24px; padding: 24px; box-shadow: 0 8px 20px rgba(255, 182, 193, 0.15); position: relative;">
+                <h2 style="color: #6a537a; font-size: 1.5rem; margin-top: 0; display: flex; align-items: center; gap: 8px;">💡 Recommended For You</h2>
+                <ul class="ai-suggestions-list" style="color: #7b6887; font-size: 0.95rem; line-height: 1.6; padding-left: 20px; margin-top: 12px;">
+                    {{ suggestions | safe }}
+                </ul>
+            </div>
+        </section>
+
+</body>
+</html>

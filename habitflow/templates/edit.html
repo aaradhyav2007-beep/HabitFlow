@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Habit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Edit Habit</h1>
+    <form method="POST">
+        <label>Habit Name</label>
+        <input type=""text" name="name" value="{{habit['name'] }}" required>
+
+        <label>Category</label>
+        <select name="category"</label>
+            <option {% if habit['category'] == 'Health' %}selected{% endif %}>Health</option>
+            <option {% if habit['category'] == 'Study' %}selected{% endif %}>Study</option>
+            <option {% if habit['category'] == 'Fitness' %}selected{% endif %}>Fitness</option>
+            <option {% if habit['category'] == 'Mindfulness' %}selected{% endif %}>Mindfulness</option>
+            <option {% if habit['category'] == 'Other' %}selected{% endif %}>Other</option>
+        </select>
+        
+        <label>Reminder Days</label>
+        <div>
+            <input type="checkbox" name="reminder_days" value="Monday" {% if 'Monday' in habit['reminder_days'] %}checked{% endif %}> Monday
+            <input type="checkbox" name="reminder_days" value="Tuesday" {% if 'Tuesday' in habit['reminder_days'] %}checked{% endif %}> Tuesday
+            <input type="checkbox" name="reminder_days" value="Wednesday" {% if 'Wednesday' in habit['reminder_days'] %}checked{% endif %}> Wednesday
+            <input type="checkbox" name="reminder_days" value="Thursday" {% if 'Thursday' in habit['reminder_days'] %}checked{% endif %}> Thursday
+            <input type="checkbox" name="reminder_days" value="Friday" {% if 'Friday' in habit['reminder_days'] %}checked{% endif %}> Friday
+            <input type="checkbox" name="reminder_days" value="Saturday" {% if 'Saturday' in habit['reminder_days'] %}checked{% endif %}> Saturday
+            <input type="checkbox" name="reminder_days" value="Sunday" {% if 'Sunday' in habit['reminder_days'] %}checked{% endif %}> Sunday
+        </div>
+
+        <label>Reminder Time</label>
+        <input type="time" name="reminder_time" value="{{ habit['reminder_time'] }}">
+
+        <button type="submit">Save Changes</button>
+        <a href="/">Cancel</a>
+
+    </form>
+
+</body>
+</html>
